@@ -36,7 +36,7 @@
          * --node-modules: 指定开发环境依赖包的位置，只需要指定到node_modules父目录即可
          *                 使用该参数便于在同一机器上运行多个分支时共享依赖包
          */
-        grunt --gruntfile=/home/webapp/src/Gruntfile.js --node-modules=/home/zhi.zhong
+        grunt --gruntfile=/home/webapp/src/Gruntfile.js --node-modules=C:\Users\qq.yang
 
         /**
          * server命令参数
@@ -134,7 +134,7 @@ module.exports = function (_GET) {
         headers = {
             // 在response的header中添加信息
             // http://nodejs.org/docs/latest/api/http.html#http_response_setheader_name_value
-            'Set-Cookie': ['name=zhongzhi', 'id=100']
+            'Set-Cookie': ['name=njdtk', 'id=100']
         }
     };
 };
