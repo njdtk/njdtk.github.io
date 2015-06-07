@@ -36,17 +36,12 @@ require([
 
     $('#imgScroll').imgScroll({
         imgs: [
-        // {
-        //     img: 'img/daniel.jpg'
-        // }, {
-        //     img: 'img/stevie.jpg'
-        // }, {
-        //     img: 'img/veronika.jpg'
-        // },
         {
-        	img: 'http://source.qunarzz.com/site/images/wap/touch/images/v2/hms/wechat_store/v2/scorll-img-1.png'
-        },{
-        	img: 'http://source.qunarzz.com/site/images/wap/touch/images/v2/hms/wechat_store/v2/scorll-img-1.png'
+            img: 'img/daniel.jpg'
+        }, {
+            img: 'img/stevie.jpg'
+        }, {
+            img: 'img/veronika.jpg'
         }],
         isHref: false,
         imgWidth: 300,
