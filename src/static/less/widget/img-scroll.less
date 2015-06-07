@@ -1,0 +1,18 @@
+.ui-img-scroll{
+  height:100%; width:100%; overflow: hidden; position: relative;
+  &-content{
+    height:100%; -webkit-transition:left .2s ease-out;transition:left .2s ease-out; position: relative;left:0;
+    .img{
+      float:left;
+      a{ display: block}
+      img{width:100%;}
+    }
+  }
+  &-pages{
+    text-align: center; top: -30px; position: relative;
+    .ui-img-scroll-page{
+      display: inline-block;*display:inline;*zoom:1;width:12px; height: 12px; background: #fff; border-radius: 6px; margin: 0 6px; overflow: hidden;
+      &.on{background: #000}
+    }
+  }
+}

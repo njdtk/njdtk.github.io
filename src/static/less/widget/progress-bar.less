@@ -1,0 +1,51 @@
+/*进度条样式*/
+.ui-progress{
+  padding-top: 10px;
+  p{
+    padding: 0;
+    margin: 0;
+  }
+  &-bar{
+    overflow: hidden;
+    padding-top: 2px;
+    .progress-item{
+      float: left;
+      display: inline;
+      background: #e0e0de;
+      height: 8px;
+      width: 200px;
+      border-radius: 6px;
+    }
+    .progress-bar-point{
+      border-radius: 6px;
+      width: 12px;
+      height: 12px;
+      margin-top: -2px;
+      border:1px solid #b1b1b1;
+      &.on{
+        background: #a9d632;
+        border-color:  #81b002;
+      }
+    }
+    .progress-bar-going{
+      background:#a9d632;
+      border:1px solid #81b002;
+      height: 8px;
+    }
+
+  }
+
+  &-text{
+    padding-top: 5px;
+    line-height: 2;
+    overflow: hidden;
+    .progress-item{
+      float: left;
+      display: inline;
+      width: 200px;
+      .progress-time{
+        color: gray;
+      }
+    }
+  }
+}

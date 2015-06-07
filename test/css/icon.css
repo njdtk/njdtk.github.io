@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('fontello.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.icon-github-circled:before { content: '\e800'; } /* '' */
+.icon-twitter:before { content: '\e801'; } /* '' */

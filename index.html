@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Njdtk UI</title>
+	<link rel="stylesheet" href="test/css/icon.css">
+	<link rel="stylesheet" href="dest/static/css/style.css">
+</head>
+<body>
+<header class="yqqhead">
+	<div class="container">
+		<h1>一些重构的公共组件 by @qq.yang</h1>
+		<p class="lead">编写可复用的，灵活的，符合代码规范的组件。</p>
+		<p class="yqqhead-links">
+	      <a href="https://github.com/mdo/code-guide">
+	        <span class="icon icon-github-circled"></span>
+	      </a>
+	    </p>
+	</div>
+</header>
+<setction class="heading">
+	<nav>
+		<a href="">示例</a>
+	</nav>
+</setction>
+
+<div class="gold">
+	<h3>黄金定律：bug无处不在</h3>
+</div>
+
+<div class="section">
+	<dic class="col">图片轮播</dic>
+	<dic class="col">
+		<div id="imgScroll">
+		</div>
+	</dic>
+</div>
+
+
+<div class="section">
+	<dic class="col">提交结果进度条</dic>
+	<dic class="col" style="padding-right:0;">
+		<div id="progressBar"></div>
+	</dic>
+</div>
+
+<div class="section">
+	<dic class="col">校验显示提示条</dic>
+	<dic class="col" style="padding-right:0;">
+		<div id="validateTip">
+			<input type="text">
+		</div>
+	</dic>
+</div>
+
+<script data-main="test/main.js" src="src/static/js/lib/require.js"></script>
+</body>
+</html>
