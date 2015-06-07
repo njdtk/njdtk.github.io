@@ -116,10 +116,10 @@ require(['pages/index/bar'])
 - 异步接口数据
 
 ### 页面初始化数据
-这类数据会随着页面模板一起加载，放在 `/app/data/page/ebooking/xxx.js`
+这类数据会随着页面模板一起加载，放在 `/app/data/page/xxx.js`
 
 ### 异步请求数据
-这类数据通过AJAX请求加载，放在 `/app/data/api/ebooking/xxx.js`
+这类数据通过AJAX请求加载，放在 `/app/data/api/xxx.js`
 
 ### 模拟数据中加入头信息
 在返回数据中加入headers节点数据的话，返回数据的同时，还会往http返回头中加入这些信息，（暂时只有页面初始化数据支持写头信息）

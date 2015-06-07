@@ -1,6 +1,6 @@
 /**
  * @fileOverview module package config file
- * @author <a href="mailto:njdtk_915@163.com">Zhongzhi</a>
+ * @author <a href="mailto:njdtk_915@163.com">Yqq</a>
  * @version 0.0.1
  *
  */
