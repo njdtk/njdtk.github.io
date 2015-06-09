@@ -1,0 +1,330 @@
+html {
+  font-size: 16px;
+}
+@media (min-width: 48em) {
+  html {
+    font-size: 20px;
+  }
+}
+body {
+  margin: 0;
+  font: 1rem/1.5 "PT Sans", sans-serif;
+  color: #5a5a5a;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+a {
+  color: #08c;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 .5rem;
+  font-weight: normal;
+  line-height: 1;
+  color: #2a2a2a;
+  letter-spacing: -0.05em;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+p {
+  margin: 0 0 1rem;
+}
+.lead {
+  font-size: 1.3rem;
+}
+blockquote {
+  position: relative;
+  margin: 0 1rem 1rem;
+  font-style: italic;
+  color: #7a7a7a;
+}
+blockquote p {
+  margin-bottom: 0;
+}
+ul li {
+  margin-bottom: .25rem;
+}
+/* Tighten up margin on last items */
+p:last-child,
+ul:last-child,
+blockquote:last-child {
+  margin-bottom: 0;
+}
+/*
+ * Code
+ */
+code,
+pre {
+  font-family: "PT Mono", Menlo, "Courier New", monospace;
+  font-size: 95%;
+}
+code {
+  padding: 2px 4px;
+  font-size: 85%;
+  color: #d44950;
+  background-color: #f7f7f9;
+  border-radius: .2rem;
+}
+pre {
+  display: block;
+  margin: 0 0 1rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+}
+.highlight {
+  margin: 0;
+}
+.highlight pre {
+  margin-bottom: 0;
+}
+.highlight + .highlight {
+  margin-top: 1rem;
+}
+/*
+ * The Grid
+ */
+.col {
+  padding: 2rem 1rem;
+}
+.col p {
+  max-width: 40rem;
+}
+.col + .col {
+  border-top: 1px solid #dfe1e8;
+  background-color: #f7f7f9;
+}
+@media (min-width: 38em) {
+  .col {
+    padding: 2rem;
+  }
+}
+@media (min-width: 48em) {
+  .section {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #eee;
+  }
+  .col {
+    display: table-cell;
+    padding: 2rem;
+    vertical-align: top;
+  }
+  .col + .col {
+    border-top: 0;
+  }
+}
+/* Make the ToC a whole section */
+.toc .col + .col {
+  background-color: #fff;
+}
+/*进度条样式*/
+.ui-progress {
+  padding-top: 10px;
+}
+.ui-progress p {
+  padding: 0;
+  margin: 0;
+}
+.ui-progress-bar {
+  overflow: hidden;
+  padding-top: 2px;
+}
+.ui-progress-bar .progress-item {
+  float: left;
+  display: inline;
+  background: #e0e0de;
+  height: 8px;
+  width: 200px;
+  border-radius: 6px;
+}
+.ui-progress-bar .progress-bar-point {
+  border-radius: 6px;
+  width: 12px;
+  height: 12px;
+  margin-top: -2px;
+  border: 1px solid #b1b1b1;
+}
+.ui-progress-bar .progress-bar-point.on {
+  background: #a9d632;
+  border-color: #81b002;
+}
+.ui-progress-bar .progress-bar-going {
+  background: #a9d632;
+  border: 1px solid #81b002;
+  height: 8px;
+}
+.ui-progress-text {
+  padding-top: 5px;
+  line-height: 2;
+  overflow: hidden;
+}
+.ui-progress-text .progress-item {
+  float: left;
+  display: inline;
+  width: 200px;
+}
+.ui-progress-text .progress-item .progress-time {
+  color: gray;
+}
+.ui-img-scroll {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.ui-img-scroll-content {
+  height: 100%;
+  -webkit-transition: left 0.2s ease-out;
+  transition: left 0.2s ease-out;
+  position: relative;
+  left: 0;
+}
+.ui-img-scroll-content .img {
+  float: left;
+}
+.ui-img-scroll-content .img a {
+  display: block;
+}
+.ui-img-scroll-content .img img {
+  width: 100%;
+}
+.ui-img-scroll-pages {
+  text-align: center;
+  top: -40px;
+  position: relative;
+}
+.ui-img-scroll-pages .ui-img-scroll-page {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 6px;
+  margin: 0 6px;
+  overflow: hidden;
+}
+.ui-img-scroll-pages .ui-img-scroll-page.on {
+  background: #000000;
+}
+.ui-tab-titles {
+  min-height: 34px;
+  margin-bottom: -8px;
+  _height: 34px;
+}
+.ui-tab-title {
+  height: 20px;
+  margin: 0 2px;
+  padding: 5px 20px 0 20px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px 4px 0 0;
+  background: #fff;
+}
+.ui-tab-title.selected {
+  font-weight: bold;
+  border: 1px solid #333;
+  border-bottom-color: #fff;
+}
+.ui-tab-content {
+  border: 1px solid #ccc;
+  background: #fff;
+}
+/**
+ * head
+ */
+.yqqhead {
+  border-top: 8px solid #66bbcc;
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #2a3440;
+}
+.yqqhead h1 {
+  color: #fff;
+  margin-bottom: .25rem;
+}
+.yqqhead-links {
+  font-size: 2rem;
+}
+.yqqhead-links a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  -webkit-transition: all .15s linear;
+          transition: all .15s linear;
+}
+.yqqhead-links a:hover {
+  color: #fff;
+}
+@media (min-width: 38em) {
+  .yqqhead {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+/**
+ * heading
+ */
+.heading {
+  width: 100%;
+  z-index: 3;
+  clear: both;
+  display: block;
+  background-color: #143352;
+  height: 42px;
+  border-top: 2px solid rgba(92, 153, 214, 0.5);
+  border-bottom: 2px solid rgba(15, 38, 61, 0.5);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 0 #000;
+}
+.heading nav a,
+.heading #dropdown li {
+  display: inline-block;
+  color: white;
+  line-height: 42px;
+  margin: 0;
+  padding: 0px 15px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-width: 0 2px;
+}
+.gold {
+  text-align: center;
+  padding: 2rem;
+  border-bottom: 1px solid #eee;
+}
+/**
+ * Code
+ */
+#progressBar p {
+  padding: 0;
+  margin: 0;
+}

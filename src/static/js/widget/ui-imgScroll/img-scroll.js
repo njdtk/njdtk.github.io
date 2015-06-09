@@ -4,6 +4,7 @@ define([
 ], function(jqueryui, tpl) {
 
     $.widget('ui.imgScroll', {
+        index:1,
         options: {
             imgs: [{
                 img: '',
@@ -22,7 +23,9 @@ define([
             // add a class for theming
             .addClass("ui-img-scroll")
             // prevent double click to select text
-            .disableSelection();
+            .disableSelection()
+
+            .width(this.options.imgWidth);
 
             this.element.append(_.template(tpl, {
                 data: this.options.imgs
@@ -46,7 +49,7 @@ define([
 
         _slideTo: function(e) {
             e.preventDefault();
-            this._slide($(e.currentTarget).index());
+            this.slide($(e.currentTarget).index());
         },
 
         slide: function(index) {
@@ -55,7 +58,7 @@ define([
                 this.index = index;
             }
             if (this.index < len) {
-                this.$content.css('left', -this.$el.width() * this.index);
+                this.$content.css('left', -this.element.width() * this.index);
                 this.$pageItem.removeClass('on');
                 $(this.$pageItem[this.index]).addClass('on');
                 this.index++;

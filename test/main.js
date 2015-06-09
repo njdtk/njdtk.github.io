@@ -9,7 +9,8 @@ require([
     'widget/ui-progressBar/progress-bar',
     'widget/ui-validateTip/validate-tip',
     'widget/ui-imgScroll/img-scroll',
-    'widget/ui-toFix/to-fix'
+    'widget/ui-toFix/to-fix',
+    'widget/ui-tab/tab'
 ], function() {
 
     $('#progressBar').progressBar({
@@ -28,7 +29,7 @@ require([
 
     $('#validateTip').validateTip({
         preEl: 'input',
-        tipMsg: 'number',
+        tipMsg: '亲，只能输入数字',
         regExp: /^\d+$/,
         require: true,
         hasArrow: true
@@ -37,15 +38,19 @@ require([
     $('#imgScroll').imgScroll({
         imgs: [
         {
-            img: 'img/daniel.jpg'
+            img: 'http://img4q.duitang.com/uploads/item/201409/02/20140902092832_yXjHn.jpeg'
         }, {
-            img: 'img/stevie.jpg'
+            img: 'http://cdnq.duitang.com/uploads/item/201409/02/20140902092818_vK5am.jpeg'
         }, {
-            img: 'img/veronika.jpg'
+            img: 'http://img5q.duitang.com/uploads/item/201407/25/20140725112104_PKJuR.jpeg'
         }],
         isHref: false,
         imgWidth: 300,
         imgHeight: 300
+    });
+
+    $('#tab').tab({
+        titles:['title1','title2']
     });
 
 });

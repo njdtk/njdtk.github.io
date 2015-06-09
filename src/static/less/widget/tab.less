@@ -1,0 +1,35 @@
+.ui-tab
+{
+    &-titles
+    {
+        min-height: 34px;
+        margin-bottom: -8px;
+
+        _height: 34px;
+    }
+    &-title
+    {
+        height: 20px;
+        margin: 0 2px;
+        padding: 5px 20px 0 20px;
+
+        cursor: pointer;
+        text-align: center;
+
+        border: 1px solid #ccc;
+        border-radius: 4px 4px 0 0;
+        background: #fff;
+        &.selected
+        {
+            font-weight: bold;
+
+            border: 1px solid #333;
+            border-bottom-color: #fff;
+        }
+    }
+    &-content
+    {
+        border: 1px solid #ccc;
+        background: #fff;
+    }
+}
