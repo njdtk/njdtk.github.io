@@ -1,70 +1,52 @@
+'use strict';
+
 define(['lib/jquery-ui'], function() {
+
     $.widget('ui.toFix', {
         options: {
             defaultTop: 0,
             startTop: 0,
             fixTop: 0
         },
-    });
-    $.fn.topSuction = function(opt) {
-        if ($(this).length < 1 || !opt.startTop) {
-            return;
-        }
 
-        var callbacks = $.Callbacks(),
-            isIE6 = !-[1, ] && !window.XMLHttpRequest,
-            Timmer = null,
-            $this = $(this),
-            $win = $(window),
-            defaultTop = opt.defaultTop ? opt.defaultTop : 0,
-            startTop = opt.startTop,
-            fixTop = opt.fixTop ? opt.fixTop : 0,
-            first = true,
-            resizeFunc = function() {
-                if (Timmer) {
-                    clearTimeout(Timmer);
+        _create: function() {
+            this.element.css({
+                top: this.options.defaultTop
+            });
+            this._on($(window), this._scrollEvents);
+        },
+
+        _resetPosition: function(scrollTop) {
+            var self = this,
+                ie = !!/msie [\w.]+/.exec(navigator.userAgent.toLowerCase());
+
+            if (scrollTop >= self.options.startTop) {
+                //开始设置
+                if (ie) {
+                    self.element.css({
+                        position: 'absolute',
+                        top: scrollTop + self.options.fixTop
+                    });
+                } else {
+                    self.element.css({
+                        position: 'fixed',
+                        top: self.options.fixTop
+                    });
                 }
-                Timmer = setTimeout(function() {
-                    if ($win.scrollTop() >= startTop) { /*开始执行事件*/
+            } else {
+                self.element.css({
+                    position: 'absolute',
+                    top: self.options.startTop
+                });
+            }
 
-                        if (first) {
-                            if (isIE6) {
-                                $this.css({
-                                    'position': 'absolute',
-                                    'top': $win.scrollTop() + fixTop
-                                });
-                            } else {
-                                $this.css({
-                                    'position': 'fixed',
-                                    'top': fixTop
-                                });
-                            }
-                            $this.hide().fadeIn('fast');
-                            first = false;
-                        }
+        },
 
-                    } else {
-                        $this.css({
-                            'position': 'absolute',
-                            'top': startTop
-                        });
-                        first = true;
-                    }
-                    callbacks.fire();
-                }, 40);
-            };
-
-        /*初始化top位置*/
-        if (defaultTop) {
-            $this.css('top', defaultTop);
+        _scrollEvents: {
+            scroll: function(event) {
+                var $target = $(event.target);
+                _.throttle(this._resetPosition($target.scrollTop()), 100);
+            }
         }
-
-        /*开始滚动和回复原样的位置*/
-        $win.bind('scroll', function() {
-            resizeFunc();
-        });
-
-        return callbacks;
-
-    };
+    });
 });

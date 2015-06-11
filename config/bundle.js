@@ -18,7 +18,8 @@
           // nested dependencies.
         'jquery',
         'underscore',
-        'backbone'
+        'backbone',
+        'text'
     ]
 
 };

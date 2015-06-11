@@ -27,7 +27,10 @@ module.exports = {
 
     test:{
         files:{
-            'test/lazyUI.min.js':['<%=path.dest%>/static/js/widget/main.js']
+            'test/njdtk.ui.min.js':[
+            '<%=path.dest%>/static/js/lib.js',
+            '<%=path.dest%>/static/js/widget/main.js',
+            'test/main.js']
         }
     }
 };

@@ -1,10 +1,12 @@
 'use strict';
+var dev = 'src/static/js',
+    test = 'test';
 
 require.config({
-    baseUrl: 'src/static/js'
+    baseUrl: dev
 });
 
-require([
+requirejs([
     'lib',
     'widget/ui-progressBar/progress-bar',
     'widget/ui-validateTip/validate-tip',
@@ -28,7 +30,6 @@ require([
     $('#progressBar').progressBar('setProgress', 2);
 
     $('#validateTip').validateTip({
-        preEl: 'input',
         tipMsg: '亲，只能输入数字',
         regExp: /^\d+$/,
         require: true,
@@ -36,8 +37,7 @@ require([
     });
 
     $('#imgScroll').imgScroll({
-        imgs: [
-        {
+        imgs: [{
             img: 'http://img4q.duitang.com/uploads/item/201409/02/20140902092832_yXjHn.jpeg'
         }, {
             img: 'http://cdnq.duitang.com/uploads/item/201409/02/20140902092818_vK5am.jpeg'
@@ -50,7 +50,18 @@ require([
     });
 
     $('#tab').tab({
-        titles:['title1','title2']
+        titles: ['title1', 'title2'],
+        tabChangeAction: function(index) {
+            alert(index);
+        },
+        beforeTabChangeAction: function(e, i) {
+            alert(1);
+            return true;
+        }
+    });
+
+    $('#to-fix-btn').toFix({
+        startTop: 550
     });
 
 });

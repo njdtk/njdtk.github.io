@@ -5,7 +5,7 @@
  */
 'use strict';
 
-var baseURL = 'src/static/js';
+var baseURL = 'static/js';
 
 var require = {
 
@@ -15,7 +15,7 @@ var require = {
         jquery: 'lib/jquery',
         underscore: 'lib/underscore',
         backbone: 'lib/backbone',
-        text:'lib/text'
+        text: 'lib/text'
     },
 
     // The shim config allows us to configure dependencies for
@@ -29,11 +29,11 @@ var require = {
         },
         backbone: {
             deps: [
-                'lib/underscore',
-                'lib/jquery'
+                'underscore',
+                'jquery'
             ],
             exports: 'Backbone'
-        }
+        },
     }
 };
 

@@ -1,3 +1,4 @@
+'use strict';
 define([
     'lib/jquery-ui',
     'text!widget/ui-imgScroll/tpl/img-scroll.tpl'
@@ -55,6 +56,7 @@ define([
         slide: function(index) {
             var len = this.options.imgs.length;
             if (index || index === 0) {
+                //当index为有效数值时才会进行赋值
                 this.index = index;
             }
             if (this.index < len) {

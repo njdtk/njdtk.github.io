@@ -1,9 +1,9 @@
+'use strict';
 define(['lib/jquery-ui'], function() {
 
     $.widget('ui.validateTip', {
         options: {
-            preEl: null,
-            tipMsg: null,
+            tipMsg: '',
             reqMsg: '必填项',
             require: false,
             showTip: true,
@@ -20,11 +20,9 @@ define(['lib/jquery-ui'], function() {
 
             this.element
             // add a class for theming
-            .addClass("ui-validate")
-            // prevent double click to select text
-            .disableSelection();
+            .addClass("ui-validate");
 
-            this.element.find(this.options.preEl).after(this.$tip);
+            this.element.append(this.$tip);
 
             this.options.hasArrow &&
                 this.$tip.append('<span class="arrow-border"></span><span class="arrow"></span>');

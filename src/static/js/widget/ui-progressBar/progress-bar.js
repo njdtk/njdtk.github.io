@@ -1,3 +1,4 @@
+'use strict';
 define([
     'lib/jquery-ui',
     'text!widget/ui-progressBar/tpl/progress-bar.tpl'
@@ -7,7 +8,7 @@ define([
 
         // default options
         options: {
-            steps: null,
+            steps: [],
             defaultIndex: 1,
 
             setProgress: null
@@ -16,17 +17,21 @@ define([
         _create: function() {
             this.element
             // add a class for theming
-            .addClass("ui-progress")
-            // prevent double click to select text
-            .disableSelection();
+            .addClass("ui-progress");
+
+            var barSize = this.options.steps.length || 1;
 
             this.element.append(_.template(tpl, {
                 data: {
                     steps: this.options.steps,
-                    barSize: this.options.steps.length * 2 - 1
+                    barSize: barSize * 2 - 1
                 }
             }));
-            this.element.find('.progress-item.bar').width(100/this.options.steps.length+'%');
+            this.element.find('.progress-item.bar').width(100 / barSize + '%');
+        },
+
+        _init: function() {
+            this.setProgress(0);
         },
 
         setProgress: function(index) {

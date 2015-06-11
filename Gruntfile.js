@@ -113,7 +113,7 @@ module.exports = function(grunt) {
                         findNestedDependencies: true,
                         inlineText: true,
                         removeCombined: true,
-                        modules: getModulesConfig('./src/static/js/widget')
+                        modules: getModulesConfig('src/static/js/widget')
                     }
                 }
             },
@@ -187,7 +187,6 @@ module.exports = function(grunt) {
         'less',
         'autoprefixer:dist',
         'requirejs',
-        'uglify:test',
         'jshint'
     ]);
 

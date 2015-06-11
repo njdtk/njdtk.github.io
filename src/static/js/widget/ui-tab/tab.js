@@ -1,8 +1,12 @@
+'use strict';
 define(['lib/jquery-ui'], function() {
 
     $.widget('ui.tab', {
         options: {
-            titles: []
+            titles: [],
+
+            tabChangeAction: null,
+            beforeTabChangeAction: null
         },
 
         _create: function() {
@@ -44,9 +48,14 @@ define(['lib/jquery-ui'], function() {
             self.element.prepend(self.$titles);
         },
 
-        _clickTab:function(e){
-        	e.preventDefault();
-        	this.changeTab($(e.currentTarget).index());
+        _clickTab: function(e) {
+            e.preventDefault(); 
+            // 需要在Tab的状态切换之前执行的状态
+            if (!this._trigger('beforeTabChangeAction', e, $(e.currentTarget).index())) {
+                return;
+            }
+            this.changeTab($(e.currentTarget).index());
+            this._trigger('tabChangeAction', e, $(e.currentTarget).index());
         },
 
         changeTab: function(index) {
